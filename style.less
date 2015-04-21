@@ -1,6 +1,7 @@
 /* Custom CSS */
-#html{
+html,body{
 	font: 14px/1.5 arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+    height: 100%;
 }
 #top{
 	height: 100px;
@@ -50,6 +51,7 @@
         width: 260px;
     }
     span{
+        font-size: 12px;
         margin-right: 16px;
     }
 }
@@ -57,6 +59,7 @@
     h3{
         font-size: 20px;
         font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+        text-shadow: 1px 1px 1px rgba(150, 150, 150, 0.41);
     }
     .boxList{
         line-height: 26px;
@@ -75,5 +78,83 @@
         font-size: 18px;
         margin-top: 6px;
     }
+    #hardware{
+        .uk-active{
+            a{
+                color: #0080ff;
+                font-weight: bold;
+            }
+        }
+        ul#hdTitle{
+            height: 100%;
+        }
+        #hdContent{
+            border: 1px solid #ddd;
+//            border-right: 1px solid #ddd;    
+//            border-bottom: 1px solid #ddd;
+            ul#hdList{
+                ul.pShow{
+                    list-style: none;
+                    padding-left: 0;
+                    li{
+                        text-align: center;
+                        margin: 10px 0;
+                        padding: 8px 0;
+                        width: 190px;
+                        border: 1px dashed #dddddd;
+                        p{
+                            margin: 0;
+                            font-size: 12px;
+                        }
+                        p.hdPrice{
+                            color: crimson;
+                            font-weight: bold;
+                        }
+                    }
+                    a{
+                        color: #555555;
+                        font-weight: normal;
+                        display: block;
+                        width: 191px;
+                    }
+                    a:hover{
+                        font-weight: bold;
+                        text-decoration: none;
+                        background-color: #fcfcfc;
+                    }
+                }
+                ol{
+                    padding-left: 0;
+                    padding-right: 6px;
+                    padding-top: 10px;
+                    li{
+                        font-size: 12px;
+                        line-height: 24px;
+                        margin-bottom: 12px;
+                        border-bottom: 1px dashed #dddddd;
+                        a{
+                            color: #2c2c2c;
+                            font-weight: normal;
+                        }
+                        a:hover{
+                            color: #bc471c;
+                            text-decoration: none;
+                        }
+                    }
+                    div{
+                        width: 180px;
+                        text-align: center;
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+/* 样式重置 */
+.uk-tab-left {
+    border-right: none;
 }
 
