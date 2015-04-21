@@ -6,12 +6,12 @@
 #top {
   height: 100px;
 }
-#light {
+#cover {
   background-color: #1f8efd;
   padding: 30px 0;
   box-shadow: 0 -1px 1px #d9d9d9;
 }
-#light h3 {
+#cover h3 {
   color: white;
   font-weight: bold;
   font-size: 20px;
@@ -19,25 +19,25 @@
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
   margin-bottom: 20px;
 }
-#light p {
+#cover p {
   color: white;
   text-indent: 2em;
   text-shadow: 1px 1px 1px rgba(45, 45, 45, 0.42);
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
-#light ul {
+#cover ul {
   list-style: inside circle;
   padding-left: 10px;
 }
-#light ul li {
+#cover ul li {
   padding-left: 10px;
   line-height: 33px;
   border-bottom: 1px dashed #656565;
 }
-#light ul li a {
+#cover ul li a {
   color: #272525;
 }
-#light ul li a:hover {
+#cover ul li a:hover {
   color: white;
   text-decoration: none;
   text-shadow: 1px 1px 1px rgba(45, 45, 45, 0.42);
@@ -53,4 +53,21 @@
 }
 #searchBar span {
   margin-right: 16px;
+}
+#mainContent h3 {
+  font-size: 20px;
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+#mainContent .boxList {
+  line-height: 26px;
+}
+#mainContent #latestList ol li {
+  line-height: 30px;
+  border-bottom: 1px dashed #afafaf;
+  margin-bottom: 8px;
+}
+#mainContent div.more {
+  float: right;
+  font-size: 18px;
+  margin-top: 6px;
 }
