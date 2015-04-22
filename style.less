@@ -56,6 +56,7 @@ html,body{
     }
 }
 #mainContent{
+    margin-bottom: 30px;
     h3{
         font-size: 20px;
         font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
@@ -65,6 +66,7 @@ html,body{
         line-height: 26px;
     }
     #latestList {
+        box-shadow: -1px -1px 2px #d9d9d9;
         ol{
             li{
                 line-height: 30px;
@@ -151,10 +153,108 @@ html,body{
         }
         
     }
+    
+    .sManB{
+        border: 1px solid #dddddd;
+        border-radius: 3px;
+        padding: 3px;
+    }
+    .sMan{
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        display: block;
+        height: 100px;
+        line-height: 100px;
+        
+    }
+    a.sMan:hover{
+        text-decoration: none;
+        color: #ffe58e;
+    }
+    #ssh{
+        background-color: #8442bc;
+    }
+    #ftp{
+        background-color: #1634b4;
+    }
+    #rsync{
+        background-color: #3ebc87;
+    }
+    #iscsi{
+        background-color: #e25d5d;
+    }
+    #webdav{
+        background-color: #3e82ef;
+    }
+    #ddns{
+        background-color: #e5b022;
+    }
+    #tftp{
+        background-color: #e52020;
+    }
+    #ups{
+        background-color: #3ae347;
+    }
+}
+#coop{
+    background: none repeat scroll 0% 0% #2D2E2F;
+    border-bottom: 1px solid #111;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #231D1D;
+    padding: 28px 0;
+    button{
+        margin-right: 6px;
+    }
+    ul.friends{
+        list-style: none;
+        padding: 0 2em;
+        margin-top: 10px;
+        li{
+            display: inline;
+            margin-right: 28px;
+            a{
+                color: white;
+            }
+            img{
+                height: 40px;
+            }
+        }
+    }
+    
+}
+#copyright{
+    border-top: 1px solid #464646;
+    background: none repeat scroll 0% 0% #28292A;
+    color: #acacac;
+    font-size: 13px;
+    text-align: center;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    padding: 20px 0 10px 0;
+    ul{
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 10px;
+        text-align: center;
+        li{
+            display: inline;
+            margin-right: 20px;
+            a{
+                color: #fff;
+            }
+        }
+    }
+    p{
+        font-size: 12px;
+    }
 }
 
 /* 样式重置 */
 .uk-tab-left {
     border-right: none;
+}
+.uk-icon-paypal{
+    color: #f2e00b;
 }
 
