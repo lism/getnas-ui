@@ -57,7 +57,7 @@ body {
   margin-right: 16px;
 }
 #mainContent {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 #mainContent h3 {
   font-size: 20px;
@@ -191,25 +191,28 @@ body {
   border-bottom: 1px solid #111;
   color: #FFF;
   text-shadow: 1px 1px 1px #231D1D;
-  padding: 28px 0;
+  padding: 28px 0 10px 0;
 }
 #coop button {
-  margin-right: 6px;
+  margin-bottom: 10px;
 }
 #coop ul.friends {
   list-style: none;
-  padding: 0 2em;
+  padding: 0 1em;
   margin-top: 10px;
+  line-height: 26px;
 }
 #coop ul.friends li {
-  display: inline;
-  margin-right: 28px;
+  float: left;
+  margin-right: 26px;
+  font-size: 12px;
 }
 #coop ul.friends li a {
-  color: white;
+  color: #a7a7a7;
 }
 #coop ul.friends li img {
   height: 40px;
+  margin-bottom: 28px;
 }
 #copyright {
   border-top: 1px solid #464646;
@@ -218,7 +221,7 @@ body {
   font-size: 13px;
   text-align: center;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-  padding: 20px 0 10px 0;
+  padding: 26px 0;
 }
 #copyright ul {
   list-style: none;
