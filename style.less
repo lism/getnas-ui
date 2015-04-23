@@ -3,6 +3,9 @@ html,body{
 	font: 14px/1.5 arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
     height: 100%;
 }
+img{
+    border: 0;
+}
 #top{
 	height: 100px;
 }
@@ -254,7 +257,7 @@ html,body{
 }
 
 /* category */
-#cateContent{
+#genContent{
     background-color: #FBFAF8;
     box-shadow: 0 -1px 1px #d9d9d9;
     #subNav{
@@ -267,6 +270,20 @@ html,body{
             color: cornflowerblue;
             text-decoration: none;
         }
+        span.title{
+            color: #8d8d8d;
+        }
+    }
+    h1{
+        font-size: 28px;
+        font-weight: 600;
+        color: #000000;
+    }
+    h2{
+        font-size: 20px;
+        font-weight: 600;
+        color: #000000;
+        font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
     }
     h3{
         font-size: 20px;
@@ -304,9 +321,152 @@ html,body{
         #pages{
             padding: 0 20px;
         }
+        #myMate{
+            border: 1px dashed #dddddd;
+            padding: 6px 18px;
+            font-size: 13px;
+            span{
+                margin-right: 20px;
+            }
+        }
+        #mainText{
+            padding: 20px 0;
+            font-size: 16px;
+            line-height: 30px;
+            p{
+                text-indent: 2em;
+                img{
+                    display: block;
+                }
+                embed{
+                    display: block;
+                }
+            }
+            h3{
+                font-size: 18px;
+                font-weight: 600;
+                text-shadow: none;
+            }
+            pre{
+                border: 1px solid #EDEDED;
+                color: #666;
+                font-family: Consolas,Monaco,Lucida Console,monospace;
+                font-size: 1rem;
+                line-height: 1.71429;
+                margin: 1.71429rem 0px;
+                overflow: auto;
+                padding: 1.71429rem;
+            }
+            a{
+                color: dodgerblue;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+            div.uk-panel{
+                background-color: #fff5f8;
+                margin-top: 28px;
+                border: 1px solid #ffcbdc;
+                border-radius: 4px;
+                p{
+                    color: #000000;
+                    margin: 0;
+                    font-size: 13px;
+                }
+                i{
+                    font-size: 60px;
+                    text-shadow: 1px 1px #bebebe;
+                }
+            }
+            div.comment{
+                
+            }
+        }
     }
     #right{
-        
+        .relate{
+            box-shadow: -1px -1px 2px #d9d9d9;
+            border-bottom: 1px solid #dddddd;
+            border-right: 1px solid #dddddd;
+            ul{
+                list-style: none;
+                padding-left: 0;
+                li{
+                    float: left;
+                    margin: 10px 18px;
+                }
+            }
+        }
+        .hotList{
+            ol{
+                padding-left: 20px;
+                li{
+                    border-bottom: 1px dashed #dddddd;
+                    padding: 8px 0;
+                    font-size: 13px;
+                }
+                li:hover{
+                    background-color: #f4f4f4;
+                }
+            }
+        }
+    }
+}
+
+/* 自定义badge */
+.myBadge{
+    a{
+        color: aliceblue;
+        padding: 6px 10px;
+        border-radius: 2px;
+    }
+}
+.myBadge-red{
+    a{
+        background-color: firebrick;
+    }
+    a:hover{
+        background-color: #f40e31;
+    }
+}
+.myBadge-yellow{
+    a{
+        background-color: #f0a71e;
+    }
+    a:hover{
+        background-color: #f4c80e;
+    }
+}
+.myBadge-green{
+    a{
+        background-color: #49aa16;
+    }
+    a:hover{
+        background-color: #60d100;
+    }
+}
+.myBadge-cyan{
+    a{
+        background-color: #0cb9b9;
+    }
+    a:hover{
+        background-color: #09d3d3;
+    }
+}
+.myBadge-blue{
+    a{
+        background-color: #0064eb;
+    }
+    a:hover{
+        background-color: #1392ff;
+    }
+}
+.myBadge-purple{
+    a{
+        background-color: #7500eb;
+    }
+    a:hover{
+        background-color: #b032ff;
     }
 }
 

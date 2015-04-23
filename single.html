@@ -102,95 +102,90 @@
                     <a href="">系统设置</a>
                     <span class="sep">></span>
                     <a href="">计划任务</a>
+                    <span class="sep">></span>
+                    <span class="title">DeltaCopy(Rsync)在FreeNAS与Windows之间同步数据</span>
                 </div>
             </div>
             <div class="uk-grid" id="left">
                 <div class="uk-width-3-4">
-                    <div class="uk-panel uk-panel-header">
-                        <h3 class="uk-panel-title"><i class="uk-icon-folder-open-o"></i> 计划任务</h3>
-                        <ul id="list">
-                            <li>
-                                <div class="uk-grid">
-                                    <div class="uk-width-1-3">
-                                        <a href="" class="uk-overlay">
-                                            <img class="uk-thumbnail" src="images/tmpic.jpg" width="255" alt="">
-                                            <div class="uk-overlay-area"></div>
-                                        </a>
-                                    </div>
-                                    <div class="uk-width-2-3 uk-margin-top">
-                                        <a href=""><h3>虚拟机安装FreeNAS-9.3的几点注意事项</h3></a>
-                                        <div>
-                                            <span class="author"><i class="uk-icon-user"></i> <a href="">Herald</a></span>
-                                            <span class="time"><i class="uk-icon-clock-o"></i> 2015-3-14 1:13</span>
-                                        </div>
-                                        <p>采用ZFS文件系统使得FreeNAS拥有了很强的数据保护能力，但安全总是相对的。对于存储了大量重要文件的NAS服务器来说，再多的安全手段也不为过，再多的备份副本也不嫌多。</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-grid">
-                                    <div class="uk-width-1-3">
-                                        <a href="" class="uk-overlay">
-                                            <img class="uk-thumbnail" src="images/tmpic.jpg" width="255" alt="">
-                                            <div class="uk-overlay-area"></div>
-                                        </a>
-                                    </div>
-                                    <div class="uk-width-2-3 uk-margin-top">
-                                        <a href=""><h3>虚拟机安装FreeNAS-9.3的几点注意事项</h3></a>
-                                        <div>
-                                            <span class="author"><i class="uk-icon-user"></i> <a href="">Herald</a></span>
-                                            <span class="time"><i class="uk-icon-clock-o"></i> 2015-3-14 1:13</span>
-                                        </div>
-                                        <p>采用ZFS文件系统使得FreeNAS拥有了很强的数据保护能力，但安全总是相对的。</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-grid">
-                                    <div class="uk-width-1-3">
-                                        <a href="" class="uk-overlay">
-                                            <img class="uk-thumbnail" src="images/tmpic.jpg" width="255" alt="">
-                                            <div class="uk-overlay-area"></div>
-                                        </a>
-                                    </div>
-                                    <div class="uk-width-2-3 uk-margin-top">
-                                        <a href=""><h3>虚拟机安装FreeNAS-9.3的几点注意事项</h3></a>
-                                        <div>
-                                            <span class="author"><i class="uk-icon-user"></i> <a href="">Herald</a></span>
-                                            <span class="time"><i class="uk-icon-clock-o"></i> 2015-3-14 1:13</span>
-                                        </div>
-                                        <p>采用ZFS文件系统使得FreeNAS拥有了很强的数据保护能力，但安全总是相对的。对于存储了大量重要文件的NAS服务器来说，再多的安全手段也不为过，再多的备份副本也不嫌多。</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="uk-grid">
-                                    <div class="uk-width-1-3">
-                                        <a href="" class="uk-overlay">
-                                            <img class="uk-thumbnail" src="images/tmpic.jpg" width="255" alt="">
-                                            <div class="uk-overlay-area"></div>
-                                        </a>
-                                    </div>
-                                    <div class="uk-width-2-3 uk-margin-top">
-                                        <a href=""><h3>虚拟机安装FreeNAS-9.3的几点注意事项</h3></a>
-                                        <div>
-                                            <span class="author"><i class="uk-icon-user"></i> <a href="">Herald</a></span>
-                                            <span class="time"><i class="uk-icon-clock-o"></i> 2015-3-14 1:13</span>
-                                        </div>
-                                        <p>采用ZFS文件系统使得FreeNAS拥有了很强的数据保护能力，但安全总是相对的。对于存储了大量重要文件的NAS服务器来说，再多的安全手段也不为过，再多的备份副本也不嫌多。</p>
-                                    </div>
-                                </div>
-                            </li>
+                    <h1>DeltaCopy(Rsync)在FreeNAS与Windows之间同步数据</h1>
+                    <div id="myMate">
+                        <span><i class="uk-icon-clock-o"></i> 2015-3-15 14:20</span> 
+                        <span><i class="uk-icon-user"></i> <a href="">Herald</a></span>
+                        <span><i class="uk-icon-folder-open-o"></i> <a href="">FreeNAS 插件</a></span>
+                        <span><i class="uk-icon-eye"></i> 290</span>
+                        <span><i class="uk-icon-comment-o"></i> 1条评论</span>
+                    </div>
+                    <div id="mainText">
+                        <p>想要在Windows与FreeNAS之间实时同步文件，使用DeltaCopy就够了，开源免费，关键是非常简单好用。</p>
+                        <p>此前已经向大家介绍了FreeNAS通过Rsync进行文件同步相关的内容，一方面是向大家介绍FreeNAS之间配置Rsync的方法，更重要的是希望通过操作演示让大家对Rsync这款工具的设置及工作原理有整体的理解。如果你还不知道FreeNAS系统如何配置Rsync模块和任务，那么就请先学习《<a href="">多台FreeNAS数据冗余：配置Rsync同步</a>》后再进行下面的内容。</p>
+                        <p><embed src="http://player.youku.com/player.php/sid/XOTM5Nzg3NzQw/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></p>
+                        <h2>情景一、将数据推送至FreeNAS</h2>
+                        <p>我们知道Rsync是一款跨平台的开源文件同步工具，它能运行在包括Linux、Windows、BSD、OS X等几乎所有的操作系统上，如果只用Rsync在FreeNAS系统之间同步数据未免有些大材小用了。但是Rsync的《<a href="" target="_blank">Windows版本(cwRsync免费版)只提供了</a>》一些基本的命令行工具而没有GUI图形化的管理界面，这样一来就只能完全手写Rsync任务配置文件，需要使用命令行才能工作，难度系数大大提高，也不便于使用。</p>
+                        <ul>
+                            <li>DeltaS.exe – 服务端程序</li>
+                            <li>DeltaC.exe – 客户端程序</li>
                         </ul>
-                        <div id="pages">
-                            <ul class="uk-pagination">
-                                <li><a href=""><i class="uk-icon-angle-double-left"></i></a></li>
-                                <li class="uk-active"><span>1</span></li>
-                                <li><a href="">2</a></li>
-                                <li><a href="">3</a></li>
-                                <li><a href="">4</a></li>
-                                <li><a href=""><i class="uk-icon-angle-double-right"></i></a></li>
-                            </ul>
+                        <p>这个问题也一度困扰着笔者，好在四下搜寻找到了一款界面友好，且开源免费的Rsync管理工具——DeltaCopy。来看看这款工具的特性介绍：</p>
+                        <ol>
+                            <li>增量备份 – 只复制文件发生变化的部分</li>
+                            <li>计划任务 – DeltaCopy 的配置文件能够按照计划任务设置运行</li>
+                            <li>邮件通知 – 能够设置向管理员发送传输成功或失败的电子邮件通知</li>
+                            <li>一键恢复 – 备份文件可以很容易地恢复</li>
+                            <li>Windows界面 – 无需手写配置文件，也不需要在Windows上操作命令行工具。</li>
+                        </ol>
+                        <p><b>DeltaCopy官方网站</b> http://www.aboutmyip.com/AboutMyXApp/DeltaCopy.jsp</p>
+                        <p><img src="images/tp-01.png" alt=""></p>
+                        <p>想要在Windows与FreeNAS之间实时同步文件，使用DeltaCopy就够了，开源免费，关键是非常简单好用。</p>
+                        <h3>第一步，把冰箱门打开</h3>
+                        <p>此前已经向大家介绍了FreeNAS通过Rsync进行文件同步相关的内容，一方面是向大家介绍FreeNAS之间配置Rsync的方法，更重要的是希望通过操作演示让大家对Rsync这款工具的设置及工作原理有整体的理解。如果你还不知道FreeNAS系统如何配置Rsync模块和任务，那么就请先学习《多台FreeNAS数据冗余：配置Rsync同步》后再进行下面的内容。</p>
+                        <pre><strong>ChangeLog</strong>
+#6323&nbsp;&nbsp; &nbsp;Bug&nbsp;&nbsp; &nbsp;Normal&nbsp;&nbsp; &nbsp;Group Ownership does not resolve from "account unknown"
+#6723&nbsp;&nbsp; &nbsp;Bug&nbsp;&nbsp; &nbsp;Normal&nbsp;&nbsp; &nbsp;Fix Samba SID generation with group mappings
+#8828&nbsp;&nbsp; &nbsp;Bug&nbsp;&nbsp; &nbsp;Normal&nbsp;&nbsp; &nbsp;Service WebDAV/apache24 unable to start due to syntax error
+#8953&nbsp;&nbsp; &nbsp;Bug&nbsp;&nbsp; &nbsp;Normal&nbsp;&nbsp; &nbsp;SMART errors now generate Alerts
+#9149&nbsp;&nbsp; &nbsp;Bug&nbsp;&nbsp; &nbsp;Normal&nbsp;&nbsp; &nbsp;API request for invalid values should return HTTP 409
+#9150&nbsp;&nbsp; &nbsp;Bug&nbsp;&nbsp; &nbsp;Normal&nbsp;&nbsp; &nbsp;Document iscsi_target_extent_xen field in API docs
+#9182&nbsp;&nbsp; &nbsp;Bug&nbsp;&nbsp; &nbsp;Normal&nbsp;&nbsp; &nbsp;High Point driver update which provides better 4Kn drive support and exposes more disk details</pre>
+                        <p>此前已经向大家介绍了FreeNAS通过Rsync进行文件同步相关的内容，一方面是向大家介绍FreeNAS之间配置Rsync的方法，更重要的是希望通过操作演示让大家对Rsync这款工具的设置及工作原理有整体的理解。如果你还不知道FreeNAS系统如何配置Rsync模块和任务，那么就请先学习《多台FreeNAS数据冗余：配置Rsync同步》后再进行下面的内容。</p>
+                        <h3>相关内容：</h3>
+                        <ul>
+                            <li><a href="">此前已经向大家介绍了FreeNAS</a></li>
+                            <li><a href="">通过Rsync进行文件同步</a></li>
+                            <li><a href="">更重要的是希望通过操作演示让大家对Rsync这款工具</a></li>
+                            <li><a href="">多台FreeNAS数据冗余：配置Rsync同步</a></li>
+                            <li><a href="">多台FreeNAS数据冗余：配置Rsync同步</a></li>
+                            <li><a href="">多台FreeNAS数据冗余：配置Rsync同步</a></li>
+                        </ul>
+                        
+                        <div class="uk-panel uk-panel-box">
+                            <div class="uk-grid uk-grid-collapse">
+                                <div class="uk-width-1-6 uk-text-center">
+                                    <i class="uk-icon-copyright"></i>
+                                </div>
+                                <div class="uk-width-5-6">
+                                    <p>本文为GetNAS.com原创，版权归上海炬树信息科技有限公司所有，未经书面授权禁止转载。 </p>
+                                    <p>授权转载请注明来源：<a href="">http://www.getnas.com/?p=130</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="comment" class="uk-margin-top">
+                            <!-- 多说评论框 start -->
+                            <div class="ds-thread" data-thread-key="" data-title="" data-url=""></div>
+                        <!-- 多说评论框 end -->
+                        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                        <script type="text/javascript">
+                        var duoshuoQuery = {short_name:"getnas"};
+                            (function() {
+                                var ds = document.createElement('script');
+                                ds.type = 'text/javascript';ds.async = true;
+                                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                                ds.charset = 'UTF-8';
+                                (document.getElementsByTagName('head')[0] 
+                                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+                            })();
+                            </script>
+                        <!-- 多说公共JS代码 end -->
                         </div>
                     </div>
                 </div>
@@ -273,5 +268,6 @@
             </div>
         </div>
     </div>
+    <a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=&amp;style=4&amp;fs=4&amp;bgcolor=LightBlue"></script> 
 </body>
 </html>
