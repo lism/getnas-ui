@@ -344,6 +344,9 @@ img {
   overflow: auto;
   padding: 1.71429rem;
 }
+#genContent #left #mainText span {
+  border-bottom: 1px dashed #2a2a2a;
+}
 #genContent #left #mainText a {
   color: dodgerblue;
 }
