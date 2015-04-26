@@ -486,7 +486,61 @@ div.more {
 #genContent #right .hotList ol li:hover {
   background-color: #f4f4f4;
 }
-/*  */
+/* us */
+#us {
+  background-color: #eee;
+  margin-bottom: -15px;
+  padding-bottom: 15px;
+}
+#us h1 {
+  font-size: 26px;
+  color: #000000;
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+#us #left .box {
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  padding: 18px 0;
+}
+#us #left .box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+#us #left .box ul li {
+  font-size: 16px;
+}
+#us #left .box ul li a {
+  display: block;
+  padding: 8px 0;
+}
+#us #left .box ul li a:hover {
+  text-decoration: none;
+}
+#us #left .box ul li:hover {
+  color: #F80;
+  border-left: 3px solid #F80;
+  background: #F7F7F7;
+}
+#us #left .box ul li.myActive {
+  color: #F80;
+  border-left: 3px solid #F80;
+  background: #F7F7F7;
+}
+#us #right #mainText {
+  margin-bottom: 15px;
+}
+#us #right #mainText p {
+  line-height: 28px;
+  margin-bottom: -10px;
+}
+#us #right #mainText a {
+  color: #428BCA;
+}
+#us #right #mainText a:hover {
+  color: #b11319;
+}
 /* 自定义badge */
 .myBadge a {
   color: aliceblue;
