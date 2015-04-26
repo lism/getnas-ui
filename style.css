@@ -449,6 +449,73 @@ div.more {
 #genContent #left #pluginPage #pluginTab a:hover {
   color: #b11319;
 }
+#genContent #left #hwList ul {
+  list-style: none;
+  padding-left: 0;
+  font-family: sans-serif;
+  margin-top: -15px;
+}
+#genContent #left #hwList ul li {
+  color: #666;
+  padding: 18px 0;
+  border-bottom: 1px solid #ddd;
+}
+#genContent #left #hwList ul li .listMate span {
+  color: #999;
+  font-size: 12px;
+  margin-right: 18px;
+}
+#genContent #left #hwList ul li .listMate a {
+  color: #6c90b2;
+}
+#genContent #left #hwList ul li .listMate a:hover {
+  text-decoration: underline;
+}
+#genContent #left #hwList ul li .uk-button {
+  border-radius: 4px;
+}
+#genContent #left #hwList h3 {
+  text-shadow: none;
+  margin-bottom: 20px;
+}
+#genContent #left #hwList h3 span {
+  color: #D62222;
+  margin-left: 20px;
+}
+#genContent #left h1#hwTitle {
+  font-size: 20px;
+  font-weight: normal;
+  text-shadow: 0;
+  color: #000;
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+#genContent #left h1#hwTitle span {
+  color: #D62222;
+  margin-left: 20px;
+}
+#genContent #left #hwLink {
+  width: 180px;
+  float: right;
+  margin: 20px 0 20px 28px;
+}
+#genContent #left #hwLink p {
+  text-indent: 0;
+  text-align: center;
+}
+#genContent #left #hwLink p:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+#genContent #left #hwLink .uk-button {
+  border-radius: 4px;
+  font-family: sans-serif;
+}
+#genContent #left #hwLink a {
+  color: #fff;
+}
+#genContent #left #hwLink a:hover {
+  text-decoration: none;
+}
 #genContent #right .relate {
   box-shadow: -1px -1px 2px #d9d9d9;
   border-bottom: 1px solid #dddddd;
