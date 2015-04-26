@@ -541,6 +541,40 @@ div.more {
 #us #right #mainText a:hover {
   color: #b11319;
 }
+#us #right #newsList ul {
+  width: 70%;
+  list-style: square;
+  list-style-position: inside;
+  font-size: 16px;
+}
+#us #right #newsList ul li {
+  border-bottom: 1px dashed #989898;
+  line-height: 36px;
+}
+#us #right #newsList ul li:hover {
+  background-color: #d9d9d9;
+}
+#us #right #newsList a:hover {
+  color: #b11319;
+  text-decoration: none;
+}
+#us #right #newsList span.publicTime {
+  font-size: 12px;
+  float: right;
+}
+#us #right #aboutMate {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+#us #right #pages {
+  width: 77%;
+}
+#us #right .aboutNews p {
+  text-indent: 2em;
+}
+#us #right .aboutNews p img {
+  display: block;
+}
 /* 自定义badge */
 .myBadge a {
   color: aliceblue;

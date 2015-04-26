@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="renderer" content="webkit">
+	<title>FreeNAS 中文精品教程发布中心 - GetNAS中文网</title>
+	<link rel="stylesheet" href="css/uikit.css">
+	<link rel="stylesheet" href="style.css">
+	<meta name="description" content="GetNAS中文网，为您提供FreeNAS中文版安装使用教程以及最新版本分流下载，为 DIY NAS 的网友提供丰富的硬件指南和组装方案，帮助构建适用于中小企业和家庭环境的NAS存储服务器。">
+	<meta name="keywords" content="FreeNAS、FreeNAS中文、FreeNAS下载、FreeNAS教程、FreeNAS共享、FreeNAS硬件">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/uikit.min.js"></script>
+	<script type="text/javascript" src="js/components/tooltip.min.js"></script>
+	<!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/html5shiv-printshiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+        });
+    </script>
+</head>
+<body>
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid" id="top">
+	        <div class="uk-width-1-4 uk-flex uk-flex-middle">
+                <a href="/" title="GetNAS中文网"><img src="images/logo.png" alt="GetNAS Logo"></a>
+	        </div>
+	        <div class="uk-width-3-4 uk-flex uk-flex-middle uk-flex-right">
+	        	<nav class="uk-navbar">
+	        		<ul class="uk-navbar-nav">
+	        			<li class="uk-active"><a href="" title=""><i class="uk-icon-home"></i> 首页</a></li>
+	        			<li><a href="" title=""><i class="uk-icon-graduation-cap"></i> FreeNAS介绍</a></li>
+	        			<li class="uk-parent" data-uk-dropdown>
+                            <a href="" title=""><i class="uk-icon-download"></i> 下载</a>
+                            <div class="uk-dropdown uk-dropdown-navbar">
+                                <ul class="uk-nav uk-nav-navbar">
+                                    <li class="uk-nav-header">
+                                        最新版本</li>
+                                    <li><a href="" title="">FreeNAS-9.3 <span class="uk-badge uk-badge-danger">New</span></a></li>
+                                    <li class="uk-nav-divider"></li>
+                                    <li class="uk-nav-header">历史版本</li>
+                                    <li><a href="" title="">FreeNAS-9.2.x <span class="uk-badge uk-badge-success">Stable</span></a></li>
+                                    <li><a href="" title="">FreeNAS-8.x <span class="uk-badge ">Old</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+	        			<li><a href="" title=""><i class="uk-icon-book"></i> 官方手册</a></li>
+                        <li class="uk-parent" data-uk-dropdown>
+                            <a href="" title=""><i class="uk-icon-life-bouy"></i> 技术交流</a>
+                            <div class="uk-dropdown uk-dropdown-navbar">
+                                <ul class="uk-nav uk-nav-navbar">
+                                    <li class="uk-nav-header">点击图标加群</li>
+                                    <li><a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=2aebc84f38fd9eeaade2c34fbe0b0d5dfc2a9e6b43c05415de49c5945e4440c4">QQ群：<img src="http://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS 中文" title="FreeNAS 中文" border="0"></a></li>
+                                    <li class="uk-nav-divider"></li>
+                                    <li><a href="" title=""><i class="uk-icon-comments"></i> 中文社区</a></li>
+                                    <li class="uk-nav-divider"></li>
+                                </ul>
+                            </div>
+                        </li>
+	        			<li><a href="" title=""><i class="uk-icon-info-circle"></i> 关于我们</a></li>
+	        		</ul>
+	        	</nav>
+	        </div>
+	    </div>
+	</div>
+    <div id="searchBar">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div class="uk-width-1-3">
+                    <form action="" class="uk-form">
+                        <div class="uk-form-icon">
+                            <i class="uk-icon-search"></i>
+                            <input type="text">
+                            <button class="uk-button uk-button-success">站内搜索</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="uk-flex uk-flex-middle uk-width-2-3">
+                    <span><a href="">CIFS共享设置</a></span>
+                    <span><a href="">FreeNAS 9.3下载</a></span>
+                    <span><a href="">FreeNAS Rsync同步</a></span>
+                    <span><a href="">Jail Aria2</a></span>
+                    <span><a href="">ZFS 替换硬盘</a></span>
+                    <span><a href="">RAID-Z配置</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="us">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid uk-margin-top">
+                <div class="uk-width-1-4">
+                    <div id="left">
+                        <div class="box">
+                            <ul>
+                                <li><a href="">关于我们</a></li>
+                                <li><a href="">联系方式</a></li>
+                                <li><a href="">商务合作</a></li>
+                                <li class="myActive"><a href="">站内动态</a></li>
+                                <li><a href="">在线投稿</a></li>
+                                <li><a href="">隐私保护</a></li>
+                                <li><a href="">免责声明</a></li>
+                                <li><a href="">用户协议</a></li>
+                                <li><a href="">知识产权声明</a></li>
+                                <li><a href="">赞助本站</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-width-3-4">
+                    <div id="right">
+                        <h1>站内动态</h1>
+                        <div id="newsList">
+                            <ul>
+                                <li><a href="">FreeNAS中文QQ群开放申请</a><span class="publicTime">2015年4月26日</span></li>
+                                <li><a href="">GetNAS中文网论坛安卓APP开放下载</a><span class="publicTime">2015年4月26日</span></li>
+                                <li><a href="">GetNAS中文论坛现已开通</a><span class="publicTime">2015年4月26日</span></li>
+                                <li><a href="">网站改版完成</a><span class="publicTime">2015年4月26日</span></li>
+                                <li><a href="">FreeNAS中文QQ群开放申请</a><span class="publicTime">2015年4月26日</span></li>
+                                <li><a href="">GetNAS中文网论坛安卓APP开放下载</a><span class="publicTime">2015年4月26日</span></li>
+                                <li><a href="">GetNAS中文论坛现已开通</a><span class="publicTime">2015年4月26日</span></li>
+                                <li><a href="">网站改版完成</a><span class="publicTime">2015年4月26日</span></li>
+                                <li><a href="">FreeNAS中文QQ群开放申请</a><span class="publicTime">2015年4月26日</span></li>
+                                <li><a href="">GetNAS中文网论坛安卓APP开放下载</a><span class="publicTime">2015年4月26日</span></li>
+                            </ul>
+                        </div>
+                        <div id="pages">
+                            <ul class="uk-pagination">
+                                <li><a href=""><i class="uk-icon-angle-double-left"></i></a></li>
+                                <li class="uk-active"><span>1</span></li>
+                                <li><a href="">2</a></li>
+                                <li><a href="">3</a></li>
+                                <li><a href="">4</a></li>
+                                <li><a href=""><i class="uk-icon-angle-double-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="coop" class="uk-margin-top">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div class="uk-width-1-2">
+                    <button class="uk-button uk-button-danger uk-button-small">特别鸣谢</button>
+                    <ul class="friends uk-margin-top">
+                        <li><a href="" title="FreeNAS 官网" target="_blank"><img src="images/freenas-logo.png" alt=""></a></li>
+                        <li><a href="" title="Wordpress 博客系统" target="_blank"><img src="images/wordpress-logo.png" alt=""></a></li>
+                        <li><a href="" title="GitHub 代码托管平台" target="_blank"><img src="images/github-logo.png" alt=""></a></li>
+                        <li><a href="" title="UIKit CSS框架" target="_blank"><img src="images/uikit-logo.jpg" alt=""></a></li>
+                        <li><a href="" title="phpWind 论坛系统" target="_blank"><img src="images/phpwind-logo.png" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-2">
+                    <button class="uk-button uk-button-success uk-button-small">友情链接</button>
+                    <ul class="friends uk-margin-top">
+                        <li><a href="" title="" target="_blank">炬树网</a></li>
+                        <li><a href="" title="" target="_blank">GetNAS 论坛</a></li>
+                        <li><a href="" title="" target="_blank">阿里云计算</a></li>
+                        <li><a class="uk-text-danger" href="" title="" target="_blank">申请友链</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div class="uk-width-1-1">
+                    <ul>
+                        <li><a href="">关于我们</a></li>
+                        <li><a href="">联系方式</a></li>
+                        <li><a href="">商务合作</a></li>
+                        <li><a href="">在线投稿</a></li>
+                        <li><i class="uk-icon-paypal"></i> <a href="">赞助本站</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-1">
+                    <p>Copyright © 2013 - 2015 上海炬树信息科技有限公司. 沪ICP备13032632号-1</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
