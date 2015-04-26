@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="renderer" content="webkit">
+	<title>FreeNAS 中文精品教程发布中心 - GetNAS中文网</title>
+	<link rel="stylesheet" href="css/uikit.css">
+	<link rel="stylesheet" href="style.css">
+	<meta name="description" content="GetNAS中文网，为您提供FreeNAS中文版安装使用教程以及最新版本分流下载，为 DIY NAS 的网友提供丰富的硬件指南和组装方案，帮助构建适用于中小企业和家庭环境的NAS存储服务器。">
+	<meta name="keywords" content="FreeNAS、FreeNAS中文、FreeNAS下载、FreeNAS教程、FreeNAS共享、FreeNAS硬件">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/uikit.min.js"></script>
+	<script type="text/javascript" src="js/components/tooltip.min.js"></script>
+	<!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/html5shiv-printshiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            /* 测试用Jquery */
+            $("div#mainText span").attr("data-uk-tooltip","");
+        });
+    </script>
+</head>
+<body>
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid" id="top">
+	        <div class="uk-width-1-4 uk-flex uk-flex-middle">
+                <a href="/" title="GetNAS中文网"><img src="images/logo.png" alt="GetNAS Logo"></a>
+	        </div>
+	        <div class="uk-width-3-4 uk-flex uk-flex-middle uk-flex-right">
+	        	<nav class="uk-navbar">
+	        		<ul class="uk-navbar-nav">
+	        			<li class="uk-active"><a href="" title=""><i class="uk-icon-home"></i> 首页</a></li>
+	        			<li><a href="" title=""><i class="uk-icon-graduation-cap"></i> FreeNAS介绍</a></li>
+	        			<li class="uk-parent" data-uk-dropdown>
+                            <a href="" title=""><i class="uk-icon-download"></i> 下载</a>
+                            <div class="uk-dropdown uk-dropdown-navbar">
+                                <ul class="uk-nav uk-nav-navbar">
+                                    <li class="uk-nav-header">
+                                        最新版本</li>
+                                    <li><a href="" title="">FreeNAS-9.3 <span class="uk-badge uk-badge-danger">New</span></a></li>
+                                    <li class="uk-nav-divider"></li>
+                                    <li class="uk-nav-header">历史版本</li>
+                                    <li><a href="" title="">FreeNAS-9.2.x <span class="uk-badge uk-badge-success">Stable</span></a></li>
+                                    <li><a href="" title="">FreeNAS-8.x <span class="uk-badge ">Old</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+	        			<li><a href="" title=""><i class="uk-icon-book"></i> 官方手册</a></li>
+                        <li class="uk-parent" data-uk-dropdown>
+                            <a href="" title=""><i class="uk-icon-life-bouy"></i> 技术交流</a>
+                            <div class="uk-dropdown uk-dropdown-navbar">
+                                <ul class="uk-nav uk-nav-navbar">
+                                    <li class="uk-nav-header">点击图标加群</li>
+                                    <li><a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=2aebc84f38fd9eeaade2c34fbe0b0d5dfc2a9e6b43c05415de49c5945e4440c4">QQ群：<img src="http://pub.idqqimg.com/wpa/images/group.png" alt="FreeNAS 中文" title="FreeNAS 中文" border="0"></a></li>
+                                    <li class="uk-nav-divider"></li>
+                                    <li><a href="" title=""><i class="uk-icon-comments"></i> 中文社区</a></li>
+                                    <li class="uk-nav-divider"></li>
+                                </ul>
+                            </div>
+                        </li>
+	        			<li><a href="" title=""><i class="uk-icon-info-circle"></i> 关于我们</a></li>
+	        		</ul>
+	        	</nav>
+	        </div>
+	    </div>
+	</div>
+    <div id="searchBar">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div class="uk-width-1-3">
+                    <form action="" class="uk-form">
+                        <div class="uk-form-icon">
+                            <i class="uk-icon-search"></i>
+                            <input type="text">
+                            <button class="uk-button uk-button-success">站内搜索</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="uk-flex uk-flex-middle uk-width-2-3">
+                    <span><a href="">CIFS共享设置</a></span>
+                    <span><a href="">FreeNAS 9.3下载</a></span>
+                    <span><a href="">FreeNAS Rsync同步</a></span>
+                    <span><a href="">Jail Aria2</a></span>
+                    <span><a href="">ZFS 替换硬盘</a></span>
+                    <span><a href="">RAID-Z配置</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="genContent">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div class="uk-width-1-1" id="subNav">
+                    <span>当前位置：</span>
+                    <a href="">首页</a>
+                    <span class="sep">></span>
+                    <span class="title">OwnCloud</span>
+                </div>
+            </div>
+            <div class="uk-grid">
+                <div class="uk-width-3-4" id="left">
+                    <div id="pluginPage">
+                        <div id="pluginTitle" class="withBanner">
+                            <div class="vignette">
+                                <h3 id="pluginName">SSH 服务</h3>
+                            </div>
+                            <style type="text/css">
+                                #pluginTitle{
+                                    background-image: url(images/banner-772x250.png);
+                                }
+                            </style>
+                        </div>
+                        <div id="pluginDescription">
+                            <div class="uk-grid" id="pluginMenu">
+                                <div class="uk-width-1-1">
+                                    <ul class="uk-tab" data-uk-tab="{connect:'#pluginTab'}">
+                                        <li class="uk-active"><a href="">服务介绍</a></li>
+                                        <li><a href="">配置</a></li>
+                                        <li><a href="">FAQ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <ul id="pluginTab" class="uk-switcher">
+                            <li>
+                                <p>ownCloud 是一款开源的文件同步和共享软件。is open source file sync and share software for everyone from individuals operating the free ownCloud Server edition, to large enterprises and service providers operating the ownCloud Enterprise Subscription. ownCloud provides a safe, secure, and compliant file synchronization and sharing solution on servers that you control.</p>
+                                <p>You can share one or more files and folders on your computer, and synchronize them with your ownCloud server. Place files in your local shared directories, and those files are immediately synchronized to the server and to other devices using the ownCloud Desktop Sync Client, Android app, or iOS app. To learn more about the ownCloud desktop and mobile clients, please refer to their respective manuals:</p>
+                                <ul>
+                                    <li><a href="">ownCloud Desktop Client</a></li>
+                                    <li><a href="">ownCloud Desktop Client</a></li>
+                                    <li><a href="">ownCloud Desktop Client</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>想要在Windows与FreeNAS之间实时同步文件，使用DeltaCopy就够了，开源免费，关键是非常简单好用。</p>
+                        <p>此前已经向大家介绍了FreeNAS通过Rsync进行文件同步相关的内容，一方面是向大家介绍FreeNAS之间配置Rsync的方法，更重要的是希望通过操作演示让大家对Rsync这款工具的设置及工作原理有整体的理解。如果你还不知道FreeNAS系统如何配置Rsync模块和任务，那么就请先学习《<a href="">多台FreeNAS数据冗余：配置Rsync同步</a>》后再进行下面的内容。</p>
+                        <p><embed src="http://player.youku.com/player.php/sid/XOTM5Nzg3NzQw/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></p>
+                        <h2>情景一、将数据推送至<span data-uk-tooltip title="开源NAS操作系统">FreeNAS</span></h2>
+                        
+                        <p>我们知道Rsync是一款跨平台的开源文件同步工具，它能运行在包括Linux、Windows、BSD、OS X等几乎所有的操作系统上，如果只用<span data-uk-tooltip="" title="开源跨平台同步工具">Rsync</span>在FreeNAS系统之间同步数据未免有些大材小用了。但是Rsync的《<a href="" target="_blank">Windows版本(cwRsync免费版)只提供了</a>》一些基本的命令行工具而没有GUI图形化的管理界面，这样一来就只能完全手写Rsync任务配置文件，需要使用命令行才能工作，难度系数大大提高，也不便于使用。</p>
+                        <blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <small>Someone famous</small>
+                        </blockquote>
+                        <p>我们知道Rsync是一款跨平台的开源文件同步工具，它能运行在包括Linux、Windows、BSD、OS X等几乎所有的操作系统上，如果只用Rsync在FreeNAS系统之间同步数据未免有些大材小用了。但是Rsync的《<a href="" target="_blank">Windows版本(cwRsync免费版)只提供了</a>》一些基本的命令行工具而没有GUI图形化的管理界面，这样一来就只能完全手写Rsync任务配置文件，需要使用命令行才能工作，难度系数大大提高，也不便于使用。</p>
+                        <p>我们知道Rsync是一款跨平台的开源文件同步工具，它能运行在包括Linux、Windows、BSD、OS X等几乎所有的操作系统上，如果只用Rsync在FreeNAS系统之间同步数据未免有些大材小用了。但是Rsync的《<a href="" target="_blank">Windows版本(cwRsync免费版)只提供了</a>》一些基本的命令行工具而没有GUI图形化的管理界面，这样一来就只能完全手写Rsync任务配置文件，需要使用命令行才能工作，难度系数大大提高，也不便于使用。</p>
+                        <ul>
+                            <li>DeltaS.exe – 服务端程序</li>
+                            <li>DeltaC.exe – 客户端程序</li>
+                        </ul>
+                        <p>这个问题也一度困扰着笔者，好在四下搜寻找到了一款界面友好，且开源免费的Rsync管理工具——DeltaCopy。来看看这款工具的特性介绍：</p>
+                        <ol>
+                            <li>增量备份 – 只复制文件发生变化的部分</li>
+                            <li>计划任务 – DeltaCopy 的配置文件能够按照计划任务设置运行</li>
+                            <li>邮件通知 – 能够设置向管理员发送传输成功或失败的电子邮件通知</li>
+                            <li>一键恢复 – 备份文件可以很容易地恢复</li>
+                            <li>Windows界面 – 无需手写配置文件，也不需要在Windows上操作命令行工具。</li>
+                        </ol>
+                        <p><b>DeltaCopy官方网站</b> http://www.aboutmyip.com/AboutMyXApp/DeltaCopy.jsp</p>
+                        <p><img src="images/tp-01.png" alt=""></p>
+                        <p>想要在Windows与FreeNAS之间实时同步文件，使用DeltaCopy就够了，开源免费，关键是非常简单好用。</p>
+                        <h3>第一步，把冰箱门打开</h3>
+                        <p>此前已经向大家介绍了FreeNAS通过Rsync进行文件同步相关的内容，一方面是向大家介绍FreeNAS之间配置Rsync的方法，更重要的是<span title="测试">希望通过</span>操作演示让大家对Rsync这款工具的设置及工作原理有整体的理解。如果你还不知道FreeNAS系统如何配置Rsync模块和任务，那么就请先学习《多台FreeNAS数据冗余：配置Rsync同步》后再进行下面的内容。</p>
+                        <p>此前已经向大家介绍了FreeNAS通过Rsync进行文件同步相关的内容，一方面是向大家介绍FreeNAS之间配置Rsync的方法，更重要的是希望通过操作演示让大家对Rsync这款工具的设置及工作原理有整体的理解。如果你还不知道FreeNAS系统如何配置Rsync模块和任务，那么就请先学习《多台FreeNAS数据冗余：配置Rsync同步》后再进行下面的内容。</p>
+                            </li>
+                            <li>
+                                <p><b>聚美优品是正品吗？</b></p>
+                                <p>是！我们保证出售所有商品均为100%正品。聚美优品作为中国目前领先的，用户最多的化妆品购物网站，每月产生上百万个订单，营业额上亿元，我们对自己的商业信誉无比重视。更多信息可查看“正品保证”、“关于我们”栏目。</p>
+                                <p><b>如何付款？支持货到付款吗？拍下有货吗？</b></p>
+                                <p>聚美优品支持支付宝账户及快捷支付，同时支持国内数十家主流银行的储蓄卡/信用卡支付。确保您的资金安全。此外，北京城8区用户可以选择货到付款。所有在售商品均可直接购买，无需和客服联系。</p>
+                                <p><b>如何使用现金券？</b></p>
+                                <p>您获得现金券之后，下订单时可以在结算金额处、点击“使用现金券”，输入现金券号或选择已拥有的现金券，即可使用。一个订单只能使用一张现金券。现金券是有期限限制的，请您在有效期内使用哦。</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="uk-width-1-4" id="right">
+                    <div class="uk-grid">
+                        <div class="uk-width-1-1 uk-margin-bottom">
+                            <h3>其他服务</h3>
+                            <div class="uk-panel uk-panel-box pluginRelate">
+                                <ul>
+                                    <li class="myBadge myBadge-red"><a href="">WebDAV</a></li>
+                                    <li class="myBadge myBadge-yellow"><a href="">SSH</a></li>
+                                    <li class="myBadge myBadge-green"><a href="">FTP</a></li>
+                                    <li class="myBadge myBadge-cyan"><a href="">Rsync</a></li>
+                                    <li class="myBadge myBadge-blue"><a href="">DDNS</a></li>
+                                    <li class="myBadge myBadge-purple"><a href="">iSCSI</a></li>
+                                    <li class="myBadge myBadge-red"><a href="">TFTP</a></li>
+                                    <li class="myBadge myBadge-yellow"><a href="">UPS</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-1 uk-margin-top">
+                            <div class="uk-panel uk-panel-header hotList">
+                                <div class="more"><a href="" target="_blank" title="查看全部"><i class="uk-icon-angle-double-right"> </i></a></div>
+                                <h3 class="uk-panel-title">相关教程</h3>
+                                <ol>
+                                    <li><a href="">FreeNAS 系统安装图文教程</a></li>
+                                    <li><a href="">常用共享介绍：CIFS、AFP、NFS、WebDAV</a></li>
+                                    <li><a href="">DIY NAS 如何选择机箱？</a></li>
+                                    <li><a href="">为 FreeNAS ZFS RAIDZ 增加扩展容量</a></li>
+                                    <li><a href="">如何为 FreeNAS 9.2.x 制作U盘镜像？</a></li>
+                                    <li><a href="">在 VirtualBox 中安装 FreeNAS 9.3</a></li>
+                                    <li><a href="">组装 FreeNAS 系统应该如何选择搭配内存？</a></li>
+                                    <li><a href="">FreeNAS插件打造ownCloud私有云网盘</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="coop" class="uk-margin-top">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div class="uk-width-1-2">
+                    <button class="uk-button uk-button-danger uk-button-small">特别鸣谢</button>
+                    <ul class="friends uk-margin-top">
+                        <li><a href="" title="FreeNAS 官网" target="_blank"><img src="images/freenas-logo.png" alt=""></a></li>
+                        <li><a href="" title="Wordpress 博客系统" target="_blank"><img src="images/wordpress-logo.png" alt=""></a></li>
+                        <li><a href="" title="GitHub 代码托管平台" target="_blank"><img src="images/github-logo.png" alt=""></a></li>
+                        <li><a href="" title="UIKit CSS框架" target="_blank"><img src="images/uikit-logo.jpg" alt=""></a></li>
+                        <li><a href="" title="phpWind 论坛系统" target="_blank"><img src="images/phpwind-logo.png" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-2">
+                    <button class="uk-button uk-button-success uk-button-small">友情链接</button>
+                    <ul class="friends uk-margin-top">
+                        <li><a href="" title="" target="_blank">炬树网</a></li>
+                        <li><a href="" title="" target="_blank">GetNAS 论坛</a></li>
+                        <li><a href="" title="" target="_blank">阿里云计算</a></li>
+                        <li><a class="uk-text-danger" href="" title="" target="_blank">申请友链</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div class="uk-width-1-1">
+                    <ul>
+                        <li><a href="">关于我们</a></li>
+                        <li><a href="">联系方式</a></li>
+                        <li><a href="">商务合作</a></li>
+                        <li><a href="">在线投稿</a></li>
+                        <li><i class="uk-icon-paypal"></i> <a href="">赞助本站</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-1">
+                    <p>Copyright © 2013 - 2015 上海炬树信息科技有限公司. 沪ICP备13032632号-1</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
