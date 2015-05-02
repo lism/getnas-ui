@@ -1,3 +1,13 @@
+/*
+Theme Name: GetNAS-2rd
+Theme URI: http://www.getnas.com
+Author: Herald Yu
+Author URI: http://weibo.com/hongru
+Description: 采用 UIKit CSS 框架设计的第二版GetNAS网站模板。
+Version: 2.0
+Text Domain: getnas-simple
+*/
+
 /* Custom CSS */
 html,body{
 	font: 14px/1.5 arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
@@ -276,12 +286,13 @@ div.more{
     }
     h1{
         font-size: 28px;
-        font-weight: 600;
+//        font-weight: 600;
         color: #000000;
+        font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
     }
     h2{
         font-size: 20px;
-        font-weight: 600;
+//        font-weight: 600;
         color: #000000;
         font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
     }
@@ -335,16 +346,13 @@ div.more{
             line-height: 30px;
             p{
                 text-indent: 2em;
-                img{
-                    display: block;
-                }
                 embed{
-                    display: block;
+//                    display: block;
                 }
             }
             h3{
                 font-size: 18px;
-                font-weight: 600;
+//                font-weight: 600;
                 text-shadow: none;
             }
             pre{
@@ -357,7 +365,15 @@ div.more{
                 overflow: auto;
                 padding: 1.71429rem;
             }
-            span{
+            ul,ol{
+                padding-left: 45px;
+                font-size: 14px;
+                line-height: 28px;
+            }
+            blockquote{
+                margin: 0 32px;
+            }
+            span.tp{
                 border-bottom: 1px dashed #2a2a2a;
             }
             a{
@@ -382,6 +398,16 @@ div.more{
                 }
             }
             div.comment{
+                
+            }
+            #page{
+                p{
+                    text-indent: 0;
+                    img{
+                        margin-right: 20px;
+                        margin-bottom: 20px;
+                    }
+                }
                 
             }
         }
@@ -443,19 +469,23 @@ div.more{
                     text-indent: 2em;
                     line-height: 30px;
                     img{
-                        display: block;
+//                        display: block;
                         border: 1px solid #ddd;
                     }
                     embed{
-                        display: block;
+//                        display: block;
                     }
                 }
                 ul{
                     list-style:disc;
-                    padding-left: 50px;
+                    padding-left: 45px;
                 }
                 ol{
-                    padding-left: 50px;
+                    padding-left: 45px;
+                }
+                ul,ol{
+                    font-size: 14px;
+                    line-height: 28px;
                 }
                 ol#screenShot{
                     padding-left: 0;
@@ -557,7 +587,7 @@ div.more{
                 padding-left: 0;
                 li{
                     float: left;
-                    margin: 10px 18px;
+                    margin: 13px;
                 }
             }
         }
@@ -600,6 +630,9 @@ div.more{
         color: #000000;
         font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
     }
+    h1,h2,h3,h4{
+        font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+    }
     #left{
         .box{
             background-color: #fff;
@@ -635,16 +668,19 @@ div.more{
     }
     #right{
         #mainText{
-            margin-bottom: 15px;
+            margin-bottom: 28px;
             p{
                 line-height: 28px;
-                margin-bottom: -10px;
+                margin-bottom: -6px;
             }
             a{
                 color: #428BCA;;
             }
             a:hover{
                 color: #b11319;
+            }
+            ul,ol{
+                margin-left: 15px;
             }
         }
         #newsList{
@@ -680,9 +716,6 @@ div.more{
         .aboutNews{
             p{
                 text-indent: 2em;
-                img{
-                    display: block;
-                }
             }
         }
     }
@@ -745,7 +778,7 @@ div.more{
     }
 }
 
-/* 样式重置 */
+/* 框架样式重置 */
 .uk-tab-left {
     border-right: none;
 }
@@ -759,3 +792,17 @@ div.more{
     border-radius: 3px;
 }
 
+/* Wordpress 样式重置 */
+.alignleft {
+    display: inline;
+    float: left;
+}
+.alignright {
+    display: inline;
+    float: right;
+}
+.aligncenter {
+    clear: both;
+    display: block;
+    margin:auto;
+} 

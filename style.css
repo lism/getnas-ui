@@ -1,3 +1,12 @@
+/*
+Theme Name: GetNAS-2rd
+Theme URI: http://www.getnas.com
+Author: Herald Yu
+Author URI: http://weibo.com/hongru
+Description: 采用 UIKit CSS 框架设计的第二版GetNAS网站模板。
+Version: 2.0
+Text Domain: getnas-simple
+*/
 /* Custom CSS */
 html,
 body {
@@ -263,12 +272,11 @@ div.more {
 }
 #genContent h1 {
   font-size: 28px;
-  font-weight: 600;
   color: #000000;
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
 #genContent h2 {
   font-size: 20px;
-  font-weight: 600;
   color: #000000;
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
@@ -323,15 +331,8 @@ div.more {
 #genContent #left #mainText p {
   text-indent: 2em;
 }
-#genContent #left #mainText p img {
-  display: block;
-}
-#genContent #left #mainText p embed {
-  display: block;
-}
 #genContent #left #mainText h3 {
   font-size: 18px;
-  font-weight: 600;
   text-shadow: none;
 }
 #genContent #left #mainText pre {
@@ -344,7 +345,16 @@ div.more {
   overflow: auto;
   padding: 1.71429rem;
 }
-#genContent #left #mainText span {
+#genContent #left #mainText ul,
+#genContent #left #mainText ol {
+  padding-left: 45px;
+  font-size: 14px;
+  line-height: 28px;
+}
+#genContent #left #mainText blockquote {
+  margin: 0 32px;
+}
+#genContent #left #mainText span.tp {
   border-bottom: 1px dashed #2a2a2a;
 }
 #genContent #left #mainText a {
@@ -367,6 +377,13 @@ div.more {
 #genContent #left #mainText div.uk-panel i {
   font-size: 60px;
   text-shadow: 1px 1px #bebebe;
+}
+#genContent #left #mainText #page p {
+  text-indent: 0;
+}
+#genContent #left #mainText #page p img {
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 #genContent #left #pluginPage .vignette {
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2) inset, 0px -1px 0px rgba(0, 0, 0, 0.1) inset;
@@ -422,18 +439,19 @@ div.more {
   line-height: 30px;
 }
 #genContent #left #pluginPage #pluginTab p img {
-  display: block;
   border: 1px solid #ddd;
-}
-#genContent #left #pluginPage #pluginTab p embed {
-  display: block;
 }
 #genContent #left #pluginPage #pluginTab ul {
   list-style: disc;
-  padding-left: 50px;
+  padding-left: 45px;
 }
 #genContent #left #pluginPage #pluginTab ol {
-  padding-left: 50px;
+  padding-left: 45px;
+}
+#genContent #left #pluginPage #pluginTab ul,
+#genContent #left #pluginPage #pluginTab ol {
+  font-size: 14px;
+  line-height: 28px;
 }
 #genContent #left #pluginPage #pluginTab ol#screenShot {
   padding-left: 0;
@@ -527,7 +545,7 @@ div.more {
 }
 #genContent #right .relate ul li {
   float: left;
-  margin: 10px 18px;
+  margin: 13px;
 }
 #genContent #right .pluginRelate {
   box-shadow: -1px -1px 2px #d9d9d9;
@@ -564,6 +582,12 @@ div.more {
   color: #000000;
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
+#us h1,
+#us h2,
+#us h3,
+#us h4 {
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
 #us #left .box {
   background-color: #fff;
   border: 1px solid #e5e5e5;
@@ -596,17 +620,21 @@ div.more {
   background: #F7F7F7;
 }
 #us #right #mainText {
-  margin-bottom: 15px;
+  margin-bottom: 28px;
 }
 #us #right #mainText p {
   line-height: 28px;
-  margin-bottom: -10px;
+  margin-bottom: -6px;
 }
 #us #right #mainText a {
   color: #428BCA;
 }
 #us #right #mainText a:hover {
   color: #b11319;
+}
+#us #right #mainText ul,
+#us #right #mainText ol {
+  margin-left: 15px;
 }
 #us #right #newsList ul {
   width: 70%;
@@ -638,9 +666,6 @@ div.more {
 }
 #us #right .aboutNews p {
   text-indent: 2em;
-}
-#us #right .aboutNews p img {
-  display: block;
 }
 /* 自定义badge */
 .myBadge a {
@@ -684,7 +709,7 @@ div.more {
 .myBadge-purple a:hover {
   background-color: #b032ff;
 }
-/* 样式重置 */
+/* 框架样式重置 */
 .uk-tab-left {
   border-right: none;
 }
@@ -696,4 +721,18 @@ div.more {
 }
 .uk-overlay-area {
   border-radius: 3px;
+}
+/* Wordpress 样式重置 */
+.alignleft {
+  display: inline;
+  float: left;
+}
+.alignright {
+  display: inline;
+  float: right;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: auto;
 }
