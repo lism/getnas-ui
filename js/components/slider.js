@@ -1,4 +1,4 @@
-/*! UIkit 2.19.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
+/*! UIkit 2.26.1 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
 (function(addon) {
 
     var component;
@@ -22,10 +22,13 @@
     UI.component('slider', {
 
         defaults: {
-            center    : false,
-            threshold : 10,
-            infinite  : true,
-            activecls : 'uk-active'
+            center           : false,
+            threshold        : 10,
+            infinite         : true,
+            autoplay         : false,
+            autoplayInterval : 7000,
+            pauseOnHover     : true,
+            activecls        : 'uk-active'
         },
 
         boot:  function() {
@@ -35,11 +38,11 @@
 
                 setTimeout(function(){
 
-                    UI.$("[data-uk-slider]", context).each(function(){
+                    UI.$('[data-uk-slider]', context).each(function(){
 
                         var ele = UI.$(this);
 
-                        if (!ele.data("slider")) {
+                        if (!ele.data('slider')) {
                             UI.slider(ele, UI.Utils.options(ele.attr('data-uk-slider')));
                         }
                     });
@@ -55,11 +58,11 @@
             this.container = this.element.find('.uk-slider');
             this.focus     = 0;
 
-            UI.$win.on("resize load", UI.Utils.debounce(function() {
+            UI.$win.on('resize load', UI.Utils.debounce(function() {
                 $this.resize(true);
             }, 100));
 
-            this.on("click.uikit.slider", '[data-uk-slider-item]', function(e) {
+            this.on('click.uk.slider', '[data-uk-slider-item]', function(e) {
 
                 e.preventDefault();
 
@@ -67,62 +70,77 @@
 
                 if ($this.focus == item) return;
 
+                // stop autoplay
+                $this.stop();
+
                 switch(item) {
                     case 'next':
                     case 'previous':
                         $this[item=='next' ? 'next':'previous']();
                         break;
                     default:
-                        $this.updateFocus(parseInt(slide, 10));
+                        $this.updateFocus(parseInt(item, 10));
                 }
             });
 
-            this.container.on('touchstart mousedown', function(evt) {
+            this.container.on({
 
-                // ignore right click button
-                if (evt.button && evt.button==2 || !$this.active) {
-                    return;
-                }
+                'touchstart mousedown': function(evt) {
 
-                anchor  = UI.$(evt.target).is('a') ? UI.$(evt.target) : UI.$(evt.target).parents('a:first');
-                dragged = false;
-
-                if (anchor.length) {
-
-                    anchor.one('click', function(e){
-                        if (dragged) e.preventDefault();
-                    });
-                }
-
-                delayIdle = function(e) {
-
-                    dragged = true;
-
-                    dragging = $this;
-                    store    = {
-                        touchx : parseInt(e.pageX, 10),
-                        dir    : 1,
-                        focus  : $this.focus,
-                        base   : $this.options.center ? 'center':'area'
-                    };
-
-                    if (e.originalEvent && e.originalEvent.touches) {
-                        e = e.originalEvent.touches[0];
+                    if (evt.originalEvent && evt.originalEvent.touches) {
+                        evt = evt.originalEvent.touches[0];
                     }
 
-                    dragging.element.data({
-                        'pointer-start': {x: parseInt(e.pageX, 10), y: parseInt(e.pageY, 10)},
-                        'pointer-pos-start': $this.pos
-                    });
+                    // ignore right click button
+                    if (evt.button && evt.button==2 || !$this.active) {
+                        return;
+                    }
 
-                    $this.container.addClass('uk-drag');
+                    // stop autoplay
+                    $this.stop();
 
-                    delayIdle = false;
-                };
+                    anchor  = UI.$(evt.target).is('a') ? UI.$(evt.target) : UI.$(evt.target).parents('a:first');
+                    dragged = false;
 
-                delayIdle.x         = parseInt(evt.pageX, 10);
-                delayIdle.threshold = $this.options.threshold;
+                    if (anchor.length) {
 
+                        anchor.one('click', function(e){
+                            if (dragged) e.preventDefault();
+                        });
+                    }
+
+                    delayIdle = function(e) {
+
+                        dragged  = true;
+                        dragging = $this;
+                        store    = {
+                            touchx : parseInt(e.pageX, 10),
+                            dir    : 1,
+                            focus  : $this.focus,
+                            base   : $this.options.center ? 'center':'area'
+                        };
+
+                        if (e.originalEvent && e.originalEvent.touches) {
+                            e = e.originalEvent.touches[0];
+                        }
+
+                        dragging.element.data({
+                            'pointer-start': {x: parseInt(e.pageX, 10), y: parseInt(e.pageY, 10)},
+                            'pointer-pos-start': $this.pos
+                        });
+
+                        $this.container.addClass('uk-drag');
+
+                        delayIdle = false;
+                    };
+
+                    delayIdle.x         = parseInt(evt.pageX, 10);
+                    delayIdle.threshold = $this.options.threshold;
+
+                },
+
+                mouseenter: function() { if ($this.options.pauseOnHover) $this.hovering = true;  },
+                mouseleave: function() { $this.hovering = false; }
             });
 
             this.resize(true);
@@ -135,13 +153,19 @@
 
             // prevent dragging links + images
             this.element.find('a,img').attr('draggable', 'false');
+
+            // Set autoplay
+            if (this.options.autoplay) {
+                this.start();
+            }
+
         },
 
         resize: function(focus) {
 
-            var $this = this, pos = 0, maxheight = 0, item, width, size;
+            var $this = this, pos = 0, maxheight = 0, item, width, cwidth, size;
 
-            this.items = this.container.children();
+            this.items = this.container.children().filter(':visible');
             this.vp    = this.element[0].getBoundingClientRect().width;
 
             this.container.css({'min-width': '', 'min-height': ''});
@@ -151,23 +175,22 @@
                 item      = UI.$(this);
                 size      = item.css({'left': '', 'width':''})[0].getBoundingClientRect();
                 width     = size.width;
+                cwidth    = item.width();
                 maxheight = Math.max(maxheight, size.height);
 
-                item.css({'left': pos, 'width':width}).data({'idx':idx, 'left': pos, 'width': width, 'area': (pos+width), 'center':(pos - ($this.vp/2 - width/2))});
+                item.css({'left': pos, 'width':width}).data({'idx':idx, 'left': pos, 'width': width, 'cwidth':cwidth, 'area': (pos+width), 'center':(pos - ($this.vp/2 - cwidth/2))});
 
                 pos += width;
             });
 
             this.container.css({'min-width': pos, 'min-height': maxheight});
 
-            if (this.options.infinite && pos <= (2*this.vp) && !this.itemsResized) {
+            if (this.options.infinite && (pos <= (2*this.vp) || this.items.length < 5) && !this.itemsResized) {
 
                 // fill with cloned items
-                this.items.each(function(idx){
+                this.container.children().each(function(idx){
                    $this.container.append($this.items.eq(idx).clone(true).attr('id', ''));
-                });
-
-                this.items.each(function(idx){
+                }).each(function(idx){
                    $this.container.append($this.items.eq(idx).clone(true).attr('id', ''));
                 });
 
@@ -186,7 +209,7 @@
                 'transform': ''
             });
 
-            this.updateFocus(0);
+            if (focus) this.updateFocus(this.focus);
         },
 
         updatePos: function(pos) {
@@ -206,7 +229,7 @@
 
             dir = dir || (idx > this.focus ? 1:-1);
 
-            var $this = this, item = this.items.eq(idx), area, i;
+            var item = this.items.eq(idx), area, i;
 
             if (this.options.infinite) {
                 this.infinite(idx, dir);
@@ -248,21 +271,39 @@
 
                                 area += this.items.eq(i).data('width');
 
-                                if (area >= this.vp) {
+                                if (area == this.vp) {
                                     idx = i;
+                                    break;
+                                }
+
+                                if (area > this.vp) {
+                                    idx = (i < this.items.length-1) ? i+1 : i;
                                     break;
                                 }
                             }
 
-                            this.updatePos(this.items.eq(idx).data('left')*-1);
+                            if (area > this.vp) {
+                                this.updatePos((this.container.width() - this.vp) * -1);
+                            } else {
+                                this.updatePos(this.items.eq(idx).data('left')*-1);
+                            }
                         }
                     }
                 }
             }
 
+            // mark elements
+            var left = this.items.eq(idx).data('left');
+
+            this.items.removeClass('uk-slide-before uk-slide-after').each(function(i){
+                if (i!==idx) {
+                    UI.$(this).addClass(UI.$(this).data('left') < left ? 'uk-slide-before':'uk-slide-after');
+                }
+            });
+
             this.focus = idx;
 
-            this.trigger('focus.uikit.slider', [idx,this.items.eq(idx), this]);
+            this.trigger('focusitem.uk.slider', [idx,this.items.eq(idx),this]);
         },
 
         next: function() {
@@ -279,9 +320,25 @@
             this.updateFocus(focus, -1);
         },
 
+        start: function() {
+
+            this.stop();
+
+            var $this = this;
+
+            this.interval = setInterval(function() {
+                if (!$this.hovering) $this.next();
+            }, this.options.autoplayInterval);
+
+        },
+
+        stop: function() {
+            if (this.interval) clearInterval(this.interval);
+        },
+
         infinite: function(baseidx, direction) {
 
-            var $this = this, item = this.items.eq(baseidx), i, z = baseidx, move = [], lastvisible, area = 0;
+            var $this = this, item = this.items.eq(baseidx), i, z = baseidx, move = [], area = 0;
 
             if (direction == 1) {
 
@@ -309,7 +366,7 @@
                         itm.css({'left': left}).data({
                             'left'  : left,
                             'area'  : (left+itm.data('width')),
-                            'center': (left - ($this.vp/2 - itm.data('width')/2))
+                            'center': (left - ($this.vp/2 - itm.data('cwidth')/2))
                         });
 
                         item = itm;
@@ -343,7 +400,7 @@
                         itm.css({'left': left}).data({
                             'left'  : left,
                             'area'  : (left+itm.data('width')),
-                            'center': (left - ($this.vp/2 - itm.data('width')/2))
+                            'center': (left - ($this.vp/2 - itm.data('cwidth')/2))
                         });
 
                         item = itm;
@@ -354,7 +411,7 @@
     });
 
     // handle dragging
-    UI.$doc.on('mousemove.uikit.slider touchmove.uikit.slider', function(e) {
+    UI.$doc.on('mousemove.uk.slider touchmove.uk.slider', function(e) {
 
         if (e.originalEvent && e.originalEvent.touches) {
             e = e.originalEvent.touches[0];
@@ -432,13 +489,16 @@
         store.diff    = diff;
     });
 
-    UI.$doc.on('mouseup.uikit.slider touchend.uikit.slider', function(e) {
+    UI.$doc.on('mouseup.uk.slider touchend.uk.slider', function(e) {
 
         if (dragging) {
 
             dragging.container.removeClass('uk-drag');
 
-            var item  = dragging.items.eq(store.focus), itm, focus = false, i, z;
+            // TODO is this needed?
+            dragging.items.eq(store.focus);
+
+            var itm, focus = false, i, z;
 
             if (store.dir == 1) {
 
@@ -471,10 +531,9 @@
 
             dragging.updateFocus(focus!==false ? focus:store._focus);
 
-            dragging = delayIdle = false;
         }
 
-
+        dragging = delayIdle = false;
     });
 
     return UI.slider;
